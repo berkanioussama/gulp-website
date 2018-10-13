@@ -23,7 +23,8 @@ gulp.task('html', function(){
     .pipe(pug({
         pretty: true
     }))
-    .pipe(gulp.dest('./build/'));
+    .pipe(gulp.dest('./build/'))
+    .pipe(browserSync.stream());
 });
 
 // Concat vendors librarys in one file
@@ -68,16 +69,39 @@ gulp.task('scripts', function(){
     .pipe(gulp.dest('./build/scripts/'));
 });
 
-gulp.task('watch',['scss', 'css', 'scripts'], function(){
+gulp.task('js', function(){
+    return gulp.src([
+        './src/scripts/vendors/html5shiv.min.js',
+        './src/scripts/vendors/respond.min.js',
+    ])
+    .pipe(gulp.dest('./build/scripts/'));
+});
+
+gulp.task('copy', function(){
+    return gulp.src([
+        './src/assets/fonts/*'
+    ])
+    .pipe(gulp.dest('./build/styles/fonts'));
+});
+
+gulp.task('images', function(){
+    return gulp.src([
+        './src/assets/images/**/*',
+    ])
+    .pipe(gulp.dest('./build/images/'));
+});
+
+gulp.task('watch',['html', 'scss', 'css', 'scripts', 'js', 'copy', 'images'], function(){
 
     browserSync.init({
         server: './build/'
     })
+    gulp.watch('./src/templates/**/*.pug', ['html']);
+    gulp.watch('./src/template/*.pug').on('change', browserSync.reload);
     gulp.watch('./src/styles/**/*.scss', ['scss']);
-    gulp.watch('./src/scripts/**/*.js', ['scripts']);
     gulp.watch('./src/styles/**/*.scss').on('change', browserSync.reload);
+    gulp.watch('./src/scripts/**/*.js', ['scripts']);
     gulp.watch('./src/scripts/**/*.js').on('change', browserSync.reload);
-    gulp.watch('./build/*.html').on('change', browserSync.reload);
 });
 
-gulp.task('default', ['css','scss', 'scripts', 'watch']);
+gulp.task('default', ['html', 'css','scss', 'scripts', 'watch']);
