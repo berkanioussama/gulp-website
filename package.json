@@ -1,18 +1,24 @@
 {
-  "name": "jacob-williams",
+  "name": "gulp-website",
   "version": "1.0.0",
-  "description": "portfolio",
-  "main": "index.js",
+  "description": "create website with pug sass js",
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://berkanioussama@bitbucket.org/berkanioussama/jacob.git"
+    "url": "git+https://github.com/berkanioussama/gulp-website.git"
   },
-  "author": "berkani oussama ala eddine",
+  "keywords": [
+    "frontend"
+  ],
+  "author": "berkani oussama ala eddine <berkanioussama@gmail.com>",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/berkanioussama/jacob#readme",
+  "bugs": {
+    "url": "https://github.com/berkanioussama/gulp-website/issues"
+  },
+  "homepage": "https://github.com/berkanioussama/gulp-website#readme",
   "devDependencies": {
     "browser-sync": "^2.24.7",
     "gulp": "^3.9.1",

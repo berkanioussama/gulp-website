@@ -18,7 +18,7 @@ const browserSync = require('browser-sync').create();
 
 gulp.task('html', function(){
     return gulp.src([
-        './src/template/*.pug',
+        './src/templates/*.pug',
     ])
     .pipe(pug({
         pretty: true

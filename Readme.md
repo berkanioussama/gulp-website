@@ -1,3 +1,3 @@
-# Jacob Williams soures files
+# gulp-website soures files
 
-The soures files are in src
+The soures files are in src folder
