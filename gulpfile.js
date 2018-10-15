@@ -16,6 +16,7 @@ const browserSync = require('browser-sync').create();
     gulp.watch - Watch files and folders for change
 */
 
+// Compile pug files to one html file
 gulp.task('html', function(){
     return gulp.src([
         './src/templates/*.pug',
@@ -54,6 +55,7 @@ gulp.task('scss', function(){
     .pipe(gulp.dest('./build/styles/'));
 });
 
+// Bind js files to one main file
 gulp.task('scripts', function(){
     return gulp.src([
         //The order is important
@@ -69,6 +71,7 @@ gulp.task('scripts', function(){
     .pipe(gulp.dest('./build/scripts/'));
 });
 
+// Copy js files to the correct directory
 gulp.task('js', function(){
     return gulp.src([
         './src/scripts/vendors/html5shiv.min.js',
@@ -77,6 +80,7 @@ gulp.task('js', function(){
     .pipe(gulp.dest('./build/scripts/'));
 });
 
+// Copy assets fonts to the correct directory
 gulp.task('copy', function(){
     return gulp.src([
         './src/assets/fonts/*'
@@ -84,9 +88,10 @@ gulp.task('copy', function(){
     .pipe(gulp.dest('./build/styles/fonts'));
 });
 
+// Copy assets images to the correct directory
 gulp.task('images', function(){
     return gulp.src([
-        './src/assets/images/**/*',
+        './src/assets/images/**/**/*',
     ])
     .pipe(gulp.dest('./build/images/'));
 });
@@ -97,7 +102,7 @@ gulp.task('watch',['html', 'scss', 'css', 'scripts', 'js', 'copy', 'images'], fu
         server: './build/'
     })
     gulp.watch('./src/templates/**/*.pug', ['html']);
-    gulp.watch('./src/template/*.pug').on('change', browserSync.reload);
+    gulp.watch('./src/templates/**/*.pug').on('change', browserSync.reload);
     gulp.watch('./src/styles/**/*.scss', ['scss']);
     gulp.watch('./src/styles/**/*.scss').on('change', browserSync.reload);
     gulp.watch('./src/scripts/**/*.js', ['scripts']);
