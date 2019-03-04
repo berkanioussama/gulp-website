@@ -1,37 +1,3 @@
 /*==================== Start section navbar ====================*/
-	.navbar{
-		background-color: #fff;
-		box-shadow: 0 8px 16px rgba($color: #000000, $alpha: 0.16);
-		.navbar-nav{
-			.nav-link {
-				position: relative;
-				color: $headline-color;
-				font-size: 13px;
-				font-weight: bold;
-				text-transform: uppercase;
-				padding: 20px 24px;
-				&::after{
-					content: "";
-					position: absolute;
-					top: -12px;
-					left: 0;
-					width: 100%;
-					height: 4px;
-					background-color: $main-color;
-				}
-			}
-			.nav-link:focus, .nav-link:hover {
-				color: $main-color;
-				&::after{
-					top: -8px;
-				}
-			}
-			.active>.nav-link, .nav-link.active, .nav-link.show, .show>.nav-link {
-				color: $main-color;
-				&::after{
-					top: -8px;
-				}
-			}
-		}
-	}
+	
 /*==================== End section navbar ====================*/

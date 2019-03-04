@@ -2,7 +2,7 @@
 node_modules
 
 # Compiled output
-build
+dist
 
 # System files
 package-lock.json
