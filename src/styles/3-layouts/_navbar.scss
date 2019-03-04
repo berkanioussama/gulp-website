@@ -1,118 +1,35 @@
 /*==================== Start section navbar ====================*/
 	.navbar{
-		padding-left: 16px;
-		padding-right: 16px;
-		border-radius: 0 0 4px 4px;
-		transition: all .5s ease-in-out;
-		@media (min-width: $breakpoint-medium){
-			border-radius: 0;
-		}
-		.navbar-brand{
-			padding-top: 2px;
-			padding-bottom: 2px;
-			transition: all .5s ease-in-out;
-			@media (min-width: $breakpoint-medium){
-				padding-top: 4px;
-				padding-bottom: 4px;
-			}
-			img{
-				height: 32px;
-				transition: all .5s ease-in-out;
-			}
-		}
-		.navbar-toggler{
-			color: $lite-white-color;
-			font-size: 24px;
-			border: 0;
-			outline: 0;
-			transition: all .5s ease-in-out;
-		}
-		.navbar-collapse{
-			background-color: $white-color;
-			padding-top: 8px;
-			padding-bottom: 8px;
-			border-radius: 0 0 8px 8px;
-			transition: all .5s ease-in-out;
-			@media (min-width: $breakpoint-medium){
-				background-color: transparent;
-				padding: 0;
-			}
-		}
+		background-color: #fff;
+		box-shadow: 0 8px 16px rgba($color: #000000, $alpha: 0.16);
 		.navbar-nav{
-			.nav-link{
+			.nav-link {
 				position: relative;
-				line-height: 24px;
-				padding: 8px 16px;
-				color: $text-color;
-				font-size: 14px;
-				font-family: $headline-font;
-				transition: all .5s ease-in-out;
-				@media (min-width: $breakpoint-medium){
-					padding: 16px 12px;
-					color: $lite-white-color;
-				}
-				@media (min-width: $breakpoint-large){
-					padding: 20px;
-					font-size: 15px;
-				}
-				&::before{
-					content: " ";
+				color: $headline-color;
+				font-size: 13px;
+				font-weight: bold;
+				text-transform: uppercase;
+				padding: 20px 24px;
+				&::after{
+					content: "";
 					position: absolute;
-					top: 0;
+					top: -12px;
 					left: 0;
-					width: 4px;
-					height: 100%;
-					background-color: transparent;
-					transition: all .5s ease-in-out;
-					@media (min-width: $breakpoint-medium){
-						top: -8px;
-						width: 100%;
-						height: 4px;
-					}
+					width: 100%;
+					height: 4px;
+					background-color: $main-color;
 				}
-				&:hover{
-					color: $main-color;
-					@media (min-width: $breakpoint-medium){
-						color: $white-color;
-					}
-					&::before{
-						background-color: $white-color;
-					}
+			}
+			.nav-link:focus, .nav-link:hover {
+				color: $main-color;
+				&::after{
+					top: -8px;
 				}
 			}
 			.active>.nav-link, .nav-link.active, .nav-link.show, .show>.nav-link {
 				color: $main-color;
-				&::before{
-					background-color: $main-color;
-				}
-			}
-		}
-	}
-	.navbar-light{
-		background-color: rgba($color: $white-color, $alpha: .95);
-		box-shadow: 0 4px 16px rgba(0, 0, 0,.15);
-		.navbar-brand{
-			color: $headline-color;
-		}
-		.navbar-toggler{
-			color: $text-color;
-		}
-		.navbar-nav{
-			.nav-link{
-				@media (min-width: $breakpoint-medium){
-					padding: 16px 12px;
-					color: $text-color;
-				}
-				@media (min-width: $breakpoint-large){
-					padding: 16px 20px;
-				}&:hover{
-					color: $main-color;
-					@media (min-width: $breakpoint-medium){
-						color: $headline-color;
-					}
-					&::before{
-						background-color: $headline-color;
-					}
+				&::after{
+					top: -8px;
 				}
 			}
 		}

@@ -1,0 +1,48 @@
+/*==================== Start button ====================*/
+.button{
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    line-height: 44px;
+    background-color: $main-color;
+    border: solid 2px $main-color;
+    border-radius: 24px;
+    outline: 0;
+    color: $white-color;
+    font-size: 14px;
+    font-family: $headline-font;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+        
+    &:hover{
+        
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 10%;
+            width: 80%;
+            height: 100%;
+            box-shadow: 0 8px 16px rgba($color: $main-color, $alpha: 0.3);
+        }
+    }
+    &:active{
+        background-color: $dark-main-color;
+        border-color: $dark-main-color;
+        color: $white-color;
+    }
+    &:focus{
+        outline: 0;
+        background-color: $dark-main-color;
+        border-color: $dark-main-color;
+        color: $white-color;
+    }
+    a{
+        color: $white-color;
+        transition: all .5s ease-in-out;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}

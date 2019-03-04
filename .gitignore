@@ -1,2 +1,8 @@
+# Dependencies
 node_modules
+
+# Compiled output
 build
+
+# System files
+package-lock.json

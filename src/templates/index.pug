@@ -1,17 +1,37 @@
+//- Variables
+- var title = "Home"
+
 <!DOCTYPE html>
 html(lang="en")
+    //- include head
     include components/head
     body#home(data-spy="scroll" data-target=".navbar" data-offset="50")
+        //- include navbar
         include components/navbar
         // start section hero
         .hero#hero
             .container
+                .row
+                    .col-md-6
+                        h1 I Am Jo Williams Senior Frontend Devoloper
+                        p.text A small description for the web site or the services you offer, and it will be use to filter in search engines, and you will make more money.
+                        button.button
+                            a(href="") Hier Me
+            .right
 
         // end section hero
 
         // start section about
         .about#about
-            .container
+            .container.section-padding
+                .row
+                    .col-md-6
+                    .col-md-5
+                        h1 About Me
+                        p.subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        p It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum.
+            .left
                 
         // end section about
+        //- include footer
         include components/footer

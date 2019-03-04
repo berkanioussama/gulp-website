@@ -1,48 +1,27 @@
 /*==================== Start section hero ====================*/
     .hero{
         position: relative;
-        min-height: 720px;
-        background: linear-gradient(90deg, 
-                                    rgba($color: $lite-main-color , $alpha: .7), 
-                                    rgba($color: $main-color , $alpha: .5)),
-                    url(../images/hero/background.jpg);
-        background-size: cover;
-        background-position: center top;
-        color: $white-color;
+        min-height: 768px;
+        overflow: hidden;
         .container{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .content{
-            @media (min-width: $breakpoint-medium){
-                width: 75%;
-            }
-            @media (min-width: $breakpoint-large){
-                width: 60%;
-            }
-            @media (min-width: $breakpoint-extra-large){
-                width: 55%;
-            }
-            .title{
-                color: $white-color;
-            }
+            @extend %absolutecenter;
             .text{
-                line-height: 24px;
-                margin-top: 24px;
-                margin-bottom: 72px;
-                color: $white-color;
-                font-size: 16px;
-                @media (min-width: $breakpoint-medium){
-                    line-height: 32px;
-                    font-size: 20px;
-                }
+                margin-top: 48px;
+                margin-bottom: 48px;
+                line-height: 32px;
+                font-size: 20px;
             }
-            .button{
-                width: 100%;
-                margin-bottom: 8px;
-            }
+        }
+        .right{
+            position: absolute;
+            top: 0;
+            left: 32px;
+            transform: translateX(100%);
+            width: 50%;
+            height: 768px;
+            background-color: $second-color;
+            border-top-left-radius: 384px;
+            border-bottom-left-radius: 384px;
         }
     }
 /*==================== End section hero ====================*/

@@ -8,40 +8,43 @@ const sourcemaps = require('gulp-sourcemaps');
 const cssMin = require('gulp-css');
 const browserSync = require('browser-sync').create();
 
-/*
-    -- top level functions --
-    gulp.task - Define tasks
-    gulp.src - Point to file to use
-    gulp.dest - Points to folder to output
-    gulp.watch - Watch files and folders for change
-*/
+var paths = {
+    templates: {
+        src: 'src/templates/**/*.pug',
+        dest: 'build/'
+      },
+    styles: {
+      src: 'src/styles/**/*.scss',
+      dest: 'build/styles/'
+    },
+    libs: {
+        src: 'src/styles/0-plugins/*.css',
+        dest: 'build/styles/'
+    },
+    scripts: {
+      src: 'src/scripts/**/*.js',
+      dest: 'build/scripts/'
+    },
+    images: {
+        src: 'src/assets/images/**/*',
+        dest: 'build/images/'
+    },
+    fonts: {
+        src: 'src/assets/fonts/**/*',
+        dest: 'build/styles/fonts/'
+    }
+};
 
 // Compile pug files to one html file
-gulp.task('html', function(){
-    return gulp.src([
-        './src/templates/*.pug',
-    ])
-    .pipe(pug({
-        pretty: true
-    }))
-    .pipe(gulp.dest('./build/'))
-    .pipe(browserSync.stream());
-});
-
-// Concat vendors librarys in one file
-gulp.task('css', function(){
-    return gulp.src([
-        './src/styles/0-plugins/*.css',
-    ])
-    .pipe(concat('libs.css'))
-    .pipe(cssMin())
-    .pipe(gulp.dest('./build/styles/'))
-    .pipe(browserSync.stream());
-});
-
+function templates(){
+    return gulp.src(paths.templates.src)
+        .pipe(pug({ pretty: true }))
+        .pipe(gulp.dest(paths.templates.dest))
+        .pipe(browserSync.stream());
+};
 // Compile scss files to one css file
-gulp.task('scss', function(){
-    return gulp.src('./src/styles/main.scss')
+function styles(){
+    return gulp.src(paths.styles.src)
     .pipe(sourcemaps.init())
     .pipe(sass({
         errLogToConsole: true
@@ -52,11 +55,17 @@ gulp.task('scss', function(){
         cascade: false
     }))
     .pipe(cssMin())
-    .pipe(gulp.dest('./build/styles/'));
-});
+    .pipe(gulp.dest(paths.styles.dest));
+};
+function libs(){
+    return gulp.src(paths.libs.src)
+    .pipe(concat('libs.css'))
+    .pipe(cssMin())
+    .pipe(gulp.dest(paths.libs.dest))
+    .pipe(browserSync.stream());
+};
 
-// Bind js files to one main file
-gulp.task('scripts', function(){
+function scripts(){
     return gulp.src([
         //The order is important
         './src/scripts/vendors/jquery-3.3.1.min.js',
@@ -68,45 +77,71 @@ gulp.task('scripts', function(){
         './src/scripts/main.js'
     ])
     .pipe(concat('main.js'))
-    .pipe(gulp.dest('./build/scripts/'));
-});
-
-// Copy js files to the correct directory
-gulp.task('js', function(){
+    .pipe(gulp.dest(paths.scripts.dest));
+};
+function browsers(){
     return gulp.src([
         './src/scripts/vendors/html5shiv.min.js',
         './src/scripts/vendors/respond.min.js',
     ])
-    .pipe(gulp.dest('./build/scripts/'));
-});
+    .pipe(gulp.dest(paths.scripts.dest));
+};
 
-// Copy assets fonts to the correct directory
-gulp.task('copy', function(){
-    return gulp.src([
-        './src/assets/fonts/*'
-    ])
-    .pipe(gulp.dest('./build/styles/fonts'));
-});
+function fonts(){
+    return gulp.src(paths.fonts.src)
+    .pipe(gulp.dest(paths.fonts.dest));
+};
 
-// Copy assets images to the correct directory
-gulp.task('images', function(){
-    return gulp.src([
-        './src/assets/images/**/**/*',
-    ])
-    .pipe(gulp.dest('./build/images/'));
-});
+function images(){
+    return gulp.src(paths.images.src)
+    .pipe(gulp.dest(paths.images.dest));
+};
 
-gulp.task('watch',['html', 'scss', 'css', 'scripts', 'js', 'copy', 'images'], function(){
+/////////////////////////////////
+function watch() {
+
+    gulp.watch(paths.templates.src, templates);
+    gulp.watch(paths.libs.src, libs);
+    gulp.watch(paths.styles.src, styles);
+    gulp.watch(paths.scripts.src, scripts);
+    gulp.watch(paths.fonts.src, fonts);
+    gulp.watch(paths.images.src, images);
+
+    gulp.watch(paths.templates.src).on('change', browserSync.reload);
+    gulp.watch(paths.libs.src, libs).on('change', browserSync.reload);
+    gulp.watch(paths.styles.src, styles).on('change', browserSync.reload);
+    gulp.watch(paths.scripts.src, scripts).on('change', browserSync.reload);
+    gulp.watch(paths.fonts.src, fonts).on('change', browserSync.reload);
+    gulp.watch(paths.images.src, images).on('change', browserSync.reload);
 
     browserSync.init({
         server: './build/'
     })
-    gulp.watch('./src/templates/**/*.pug', ['html']);
-    gulp.watch('./src/templates/**/*.pug').on('change', browserSync.reload);
-    gulp.watch('./src/styles/**/*.scss', ['scss']);
-    gulp.watch('./src/styles/**/*.scss').on('change', browserSync.reload);
-    gulp.watch('./src/scripts/**/*.js', ['scripts']);
-    gulp.watch('./src/scripts/**/*.js').on('change', browserSync.reload);
-});
+}
 
-gulp.task('default', ['html', 'css','scss', 'scripts', 'watch']);
+/*
+* You can use CommonJS `exports` module notation to declare tasks
+*/
+exports.templates = templates;
+exports.libs = libs;
+exports.styles = styles;
+exports.scripts = scripts;
+exports.browsers = browsers;
+exports.fonts = fonts;
+exports.images = images;
+exports.watch = watch;
+
+/*
+* Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
+*/
+var build = gulp.series(gulp.parallel(templates, styles, libs, scripts, browsers, fonts, images));
+
+/*
+* You can still use `gulp.task` to expose tasks
+*/
+gulp.task('build', build);
+
+/*
+* Define default task that can be called by just running `gulp` from cli
+*/
+gulp.task('default', build);

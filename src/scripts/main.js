@@ -47,18 +47,18 @@ $(document).ready(function(){
     /*= on init =*/
 	var scrolling = $(document).scrollTop();
 	if(scrolling >= 50){
-		$(".navbar").removeClass("navbar-dark");
-		$(".navbar").addClass("navbar-light");
+		$(".navbar").removeClass("navbar-light");
+		$(".navbar").addClass("navbar-dark");
     }
     /*= whene start scrolling =*/
 	$(document).on('scroll' , function(){
 		var scrolling = $(document).scrollTop();
 		if(scrolling >= 50){
-			$(".navbar").removeClass("navbar-dark");
-			$(".navbar").addClass("navbar-light");
-		}else{
 			$(".navbar").removeClass("navbar-light");
 			$(".navbar").addClass("navbar-dark");
+		}else{
+			$(".navbar").removeClass("navbar-dark");
+			$(".navbar").addClass("navbar-light");
 		}
 	});
 	/*==================== End navbar animation ====================*/

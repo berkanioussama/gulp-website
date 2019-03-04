@@ -2,7 +2,22 @@
 #home{
     /*========== start section about ==========*/
     .about{
-    
+        position: relative;
+        min-height: 768px;
+        .subtitle{
+            line-height: 40px;
+            font-size: 28px;
+        }
+        .left{
+            position: absolute;
+            top: 0;
+            left: -340px;
+            width: 50%;
+            height: 100%;
+            background-color: $second-color;
+            border-top-right-radius: 384px;
+            border-bottom-right-radius: 384px;
+        }
     }
     /*========== end section about ==========*/
 }
