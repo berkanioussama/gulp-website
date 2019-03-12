@@ -71,15 +71,20 @@ function customJs(){
     return gulp.src("./src/scripts/custom.js")
     .pipe(include())
     .on('error', console.log)
-    .pipe(gulp.dest("./src/scripts/vendors"));
+    .pipe(gulp.dest("./src/inbetween/"));
 };
 
 // concat js libs files to one js main file
 function scripts(){
     return gulp.src([
         //The order is important
-        './src/scripts/vendors/jquery-3.3.1.min.js',
-        './src/scripts/vendors/custom.js'
+        './node_modules/jquery/dist/jquery.min.js',
+        './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+        './node_modules/filterizr/dist/jquery.filterizr.min.js',
+        './node_modules/sal.js/dist/sal.js',
+        './src/scripts/vendors/smooth-scroll.min.js',
+        './src/scripts/vendors/owl.carousel.min.js',
+        './src/inbetween/custom.js'
     ])
     .pipe(concat('main.js'))
     .pipe(gulp.dest(paths.scripts.dist));
@@ -128,13 +133,15 @@ function watchFiles(){
     gulp.watch(paths.styles.src, styles);
     gulp.watch(paths.styles.src).on('change', browserSync.reload);
 
-    gulp.watch("src/scripts/*.js", customJs);
+    gulp.watch(paths.scripts.src, gulp.series(customJs, scripts));
+    gulp.watch(paths.scripts.src).on('change', browserSync.reload);
+    /*
     gulp.watch("src/scripts/layouts/*.js", customJs);
     gulp.watch("src/scripts/*.js").on('change', browserSync.reload);
     gulp.watch("src/scripts/layouts/*.js").on('change', browserSync.reload);
     
     gulp.watch("./src/scripts/vendors/*.js", scripts);
-    gulp.watch("./src/scripts/vendors/*.js").on('change', browserSync.reload);
+    gulp.watch("./src/scripts/vendors/*.js").on('change', browserSync.reload);*/
 } 
 
 // define tasks
@@ -151,7 +158,7 @@ gulp.task('reloadBrowser', reloadBrowser);
 
 
 // Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
-var dist = gulp.parallel(templates, concatLibs, styles, customJs, scripts, supportBrowsers, fonts, webfonts, images);
+var dist = gulp.series(templates, concatLibs, styles, customJs, scripts, supportBrowsers, fonts, webfonts, images);
 
 // You can still use `gulp.task` to expose tasks
 gulp.task('dist', dist);

@@ -19,11 +19,13 @@ Gulp 4 basic flow
     Local version 4.0.0
 
 # How to start
-In website directory Run commend
+In website directory Run commend to build the website
 
     gulp
 
+To watch files in development
 
+    gulp watch
 # Source Files stracture
 
     /src

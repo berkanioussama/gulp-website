@@ -1,42 +1,38 @@
 // ********************
 // Colors Variables
 // ********************
-    // Text
-    $headline-color: #202224;
-    $text-color: #6f7378;
-    $lite-white-color: #f0f0f0;
-    //Fill
-    $white-color: #fff;
-    $dark-color: #202224;
-    $lite-dark-color: #363640;
-    $gray-color: #e0e0e0;
-    $dark-gray-color: #999;
-	$lite-gray-color: #f4f7f8;
-    $main-color: #4C54FF;
-    $second-color: #4CD489;
-    $lite-main-color: rgb(126, 88, 223);
-    $dark-main-color: rgb(57, 39, 102);
-    $success-color: #35EABD;
-    $filed-color: #F14E3B;
+    $brand-01: #FF3CA0;
+    $brand-02: #A6266E;
+
+    $ui-01: #FFFFFF;
+    $ui-02: #F4F7FB;
+    $ui-03: #DFE3E6;
+
+    $text-01: #202530;
+    $text-02: #5A6872;
+    $text-03: #CDD1D4;
+    $inverse-01: #FFFFFF;
+    $inverse-02: rgba(255, 255, 255, .9);
 
 // ********************
 // Fonts
 // ********************
-	$headline-font: 'Lato-Bold', sans-serif;
-    $text-font: 'OpenSans-Regular', sans-serif;
-    $thin-font: 'Lato-Light', sans-serif;
-        @font-face{
-            font-family: 'Lato-Bold';
-            src : url('fonts/Lato-Bold.ttf');
-        }
-        @font-face{
-            font-family: 'OpenSans-Regular';
-            src : url('fonts/OpenSans-Regular.ttf');
-        }
-        @font-face{
-            font-family: 'Lato-Thin';
-            src : url('fonts/Lato-Light.ttf');
-        }
+    $text: 'IBMPlexSans-Regular', sans-serif;
+    $text-medium: 'IBMPlexSans-Medium', sans-serif;
+    $headline: 'IBMPlexSans-Bold', sans-serif;
+
+    @font-face{
+        font-family: 'IBMPlexSans-Bold';
+        src : url('../fonts/IBMPlexSans-Bold.ttf');
+    }
+    @font-face{
+        font-family: 'IBMPlexSans-Medium';
+        src : url('../fonts/IBMPlexSans-Medium.ttf');
+    }
+    @font-face{
+        font-family: 'IBMPlexSans-Regular';
+        src : url('../fonts/IBMPlexSans-Regular.ttf');
+    }
 
 // ********************
 // Breakpont
