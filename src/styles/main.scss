@@ -5,7 +5,7 @@
 * ==============================================
 * Template name : Title
 * Version : 1.0
-* Last update : 04.04.2019
+* Last update : 30.03.2019
 * ==============================================
 * Librarys : Jquery 3.3.1
 * ==============================================
@@ -14,12 +14,14 @@
 
 // import scss files in order
 
-@import '0-plugins/_0-plugins.scss';
+@import '0-plugins/0-plugins';
 
-@import '1-helper/_1-helper.scss';
+@import '1-hulper/1-hulper';
 
-@import '2-base/_2-base.scss';
+@import '2-base/2-base';
 
-@import '3-layouts/_3-layouts.scss';
+@import '3-modules/3-modules';
 
-@import '4-pages/_4-pages.scss';
+@import '4-layouts/4-layouts';
+
+@import '5-pages/5-pages';

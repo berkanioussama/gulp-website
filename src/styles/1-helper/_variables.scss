@@ -21,18 +21,25 @@
     $text-medium: 'IBMPlexSans-Medium', sans-serif;
     $headline: 'IBMPlexSans-Bold', sans-serif;
 
-    @font-face{
-        font-family: 'IBMPlexSans-Bold';
-        src : url('../fonts/IBMPlexSans-Bold.ttf');
-    }
-    @font-face{
-        font-family: 'IBMPlexSans-Medium';
-        src : url('../fonts/IBMPlexSans-Medium.ttf');
-    }
-    @font-face{
-        font-family: 'IBMPlexSans-Regular';
-        src : url('../fonts/IBMPlexSans-Regular.ttf');
-    }
+// ********************
+// Layout scale
+// ********************
+    $layout-md: 48px;
+    $layout-lg: 64px;
+    $layout-xl: 96px;
+    $layout-2xl: 160px;
+
+// ********************
+// Spacing scale
+// ********************
+    $spacing-2xs: 4px;
+    $spacing-xs: 8px;
+    $spacing-sm: 12px;
+    $spacing-md: 16px;
+    $spacing-lg: 24px;
+    $spacing-xl: 32px;
+    $spacing-2xl: 40px;
+    $spacing-3xl: 48px;
 
 // ********************
 // Breakpont
