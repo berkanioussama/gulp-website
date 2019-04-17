@@ -1,3 +1,28 @@
-//- start section navbar
-
-//- end section navbar
+//- Navbar Section
+nav.navbar.navbar-expand-lg.navbar-dark
+    .container
+        //- Navbar Section
+        a.navbar-brand(href="index.html")
+            img(src="images/logo.png", alt="JAhmed Logo")
+        //- End of Navbar Section
+        //- Collapse
+        button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation")
+            i.fas.fa-stream
+        .collapse.navbar-collapse#navbarContent
+            ul.navbar-nav.ml-auto
+                li.nav-item( active="active"): a.nav-link(href="index.html#hero" data-scroll) Home.
+                li.nav-item: a.nav-link(href="index.html#about" data-scroll) About.
+                li.nav-item: a.nav-link(href="index.html#services" data-scroll) Services.
+                li.nav-item: a.nav-link(href="index.html#portfolio" data-scroll) Portfolio.
+                li.nav-item: a.nav-link(href="index.html#testimonial" data-scroll) Testimonial.
+                li.nav-item: a.nav-link(href="index.html#blog" data-scroll) Blog.
+                li.nav-item: a.nav-link(href="index.html#contact" data-scroll) Contact.
+                li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") pages
+                    .dropdown-menu(aria-labelledby="navbarDropdown")
+                        a.dropdown-item(href="blog.html") Blog
+                        a.dropdown-item(href="post-details.html") Post Details
+                        .dropdown-divider
+                        a.dropdown-item(href="404.html") 404 Page
+        //- End of Collapse
+//- End of Navbar

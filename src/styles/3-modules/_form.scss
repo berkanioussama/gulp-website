@@ -1,0 +1,42 @@
+.info{
+    margin-bottom: $layout-md;
+    @media (min-width: $breakpoint-large) {
+        margin-bottom: 0;
+    }
+}
+form, .form{
+    .form-group{
+        margin-bottom: $spacing-lg;
+    }
+    label{
+        margin-bottom: $spacing-2xs;
+        font-family: $text-medium;
+        text-transform: uppercase;
+    }
+    .form-control{
+        height: 52px;
+        padding: $spacing-sm;
+        border: solid 1px $ui-03;
+        box-shadow: 0 2px 4px rgba($color: #000000, $alpha: .1);
+        transition: all .3s ease-in-out;
+        &:active, &:focus{
+            border-color: $brand-01;
+            border-width: 2px;
+            box-shadow: 0 2px 4px rgba($color: #000000, $alpha: .1);
+        }
+        &.is-valid{
+            border-width: 2px;
+            border-color: $success;
+        }
+        &.is-invalid{
+            border-width: 2px;
+            border-color: $danger;
+        }
+    }
+    textarea.form-control{
+        height: 224px;
+    }
+    ::placeholder{
+        color: rgba($color: $text-02, $alpha: .7);
+    }
+}

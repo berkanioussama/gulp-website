@@ -1,0 +1,22 @@
+.pagination {
+    border-radius: $spacing-2xs;
+    .page-item{
+        .page-link{
+            padding: $spacing-sm $spacing-md;
+            color: $brand-01;
+            &:hover{
+                color: $brand-02;
+                background-color: $ui-02;
+                border-color: $ui-03;
+            }
+        }
+        &:first-child .page-link{
+            border-top-left-radius: $spacing-2xs;
+            border-bottom-left-radius: $spacing-2xs;
+        }
+        &:last-child .page-link{
+            border-top-right-radius: $spacing-2xs;
+            border-bottom-right-radius: $spacing-2xs;
+        }
+    }
+}

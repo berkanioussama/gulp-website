@@ -1,0 +1,8 @@
+.breadcrumb{
+    a{
+        color: $brand-01;
+        &:hover{
+            color: $brand-02;
+        }
+    }
+}

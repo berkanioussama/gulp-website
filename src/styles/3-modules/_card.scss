@@ -1,0 +1,54 @@
+.card{
+    position: relative;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba($color: #000000, $alpha: .1);
+    transition: all .3s ease-in-out;
+    .card-img-top{
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+    .card-body{
+        padding: $spacing-lg;
+        .card-title{
+            margin-bottom: 0;
+            letter-spacing: 1px;
+            a{
+                color: $text-01;
+                transition: all .3s ease-in-out;
+                &:hover{
+                    color: $brand-01;
+                }
+            }
+        }
+        .card-subtitle{
+            margin-top: 0;
+            line-height: 24px;
+            font-size: 14px;
+        }
+        .card-link{
+            position: relative;
+            color: $brand-01;
+            transition: all .3s ease-in-out;
+            &::after{
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 0;
+                height: 2px;
+                background-color: $brand-01;
+                transition: all .3s ease-in-out;
+            }
+            &:hover{
+                &::after{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &:hover, &:active{
+        box-shadow: 0 8px 24px rgba($color: $brand-01, $alpha: .1);
+        transform: translateY(-4px);
+    }
+}
