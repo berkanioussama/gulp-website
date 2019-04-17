@@ -27,7 +27,8 @@
     "node-sass": "^4.11.0"
   },
   "scripts": {
-    "dist": "gulp"
+    "dist": "gulp",
+    "wath": "gulp watch"
   },
   "repository": {
     "type": "git",

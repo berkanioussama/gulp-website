@@ -49,14 +49,6 @@ function templates(){
         .pipe(gulp.dest(paths.templates.dist));
 };
 
-// concat css libs files to one css main file
-function concatLibs(){
-    return gulp.src(paths.libs.src)
-    .pipe(concat('libs.css'))
-    .pipe(cssMin())
-    .pipe(gulp.dest(paths.libs.dist));
-};
-
 // Compile scss files to one css main file
 function styles(){
     return gulp.src(paths.styles.src)
@@ -129,7 +121,6 @@ function watchFiles(){
 
 // define tasks
 gulp.task('templates', templates);
-gulp.task('concatLibs', concatLibs);
 gulp.task('styles', styles);
 gulp.task('scripts', scripts);
 gulp.task('supportBrowsers', supportBrowsers);
@@ -140,7 +131,7 @@ gulp.task('reloadBrowser', reloadBrowser);
 
 
 // Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
-var dist = gulp.parallel(templates, concatLibs, styles, scripts, supportBrowsers, fonts, webfonts, images);
+var dist = gulp.parallel(templates, styles, scripts, supportBrowsers, fonts, webfonts, images);
 
 // You can still use `gulp.task` to expose tasks
 gulp.task('dist', dist);
