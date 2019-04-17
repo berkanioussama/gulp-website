@@ -14,32 +14,38 @@ reload = browserSync.reload;
 // files place shortcut 
 var paths = {
     templates: {
-        src: 'src/templates/1-pages/*.pug', srcAll: 'src/templates/**/*.pug', dist: 'dist/'
+        src:  'src/templates/1-pages/*.pug', srcAll: 'src/templates/**/*.pug', 
+        dist: 'dist/'
     },
     styles: {
-      src: 'src/styles/**/*.scss', dist: 'dist/styles/'
+        src:  'src/styles/**/*.scss', dist: 'dist/styles/'
     },
     libs: {
-        src: 'src/styles/0-plugins/*.css', dist: 'dist/styles/'
+        src:  ['src/styles/0-plugins/*.css'], 
+        dist: 'dist/styles/'
     },
     scripts: {
-      src: 'src/scripts/**/*.js', dist: 'dist/scripts/'
+      src:  'src/scripts/**/*.js', 
+      dist: 'dist/scripts/'
     },
     images: {
-        src: 'src/assets/images/**/*', dist: 'dist/images/'
+        src:  'src/assets/images/**/*', 
+        dist: 'dist/images/'
     },
     fonts: {
-        src: 'src/assets/fonts/*', dist: 'dist/fonts/'
+        src:  'src/assets/fonts/*', 
+        dist: 'dist/fonts/'
     },
     webfonts: {
-        src: 'src/assets/webFonts/*', dist: 'dist/webfonts/'
+        src:  'src/assets/webFonts/*', 
+        dist: 'dist/webfonts/'
     }
 };
 
 // Compile pug files to html pages
 function templates(){
     return gulp.src(paths.templates.src)
-        .pipe(pug({ pretty: true }))
+        .pipe(pug(/*{ pretty: true }*/))
         .pipe(gulp.dest(paths.templates.dist));
 };
 
@@ -67,21 +73,10 @@ function styles(){
 };
 
 // concat custom layout js files to one js main file
-function customJs(){
-    return gulp.src("./src/scripts/custom.js")
+function scripts(){
+    return gulp.src("./src/scripts/main.js")
     .pipe(include())
     .on('error', console.log)
-    .pipe(gulp.dest("./src/scripts/vendors"));
-};
-
-// concat js libs files to one js main file
-function scripts(){
-    return gulp.src([
-        //The order is important
-        './src/scripts/vendors/jquery-3.3.1.min.js',
-        './src/scripts/vendors/custom.js'
-    ])
-    .pipe(concat('main.js'))
     .pipe(gulp.dest(paths.scripts.dist));
 };
 
@@ -97,7 +92,7 @@ function supportBrowsers(){
 // copy fonts to dist fonts folder
 function fonts(){
     return gulp.src(paths.fonts.src)
-    .pipe(gulp.dest(paths.fonts.dist))
+    .pipe(gulp.dest(paths.fonts.dist));
 };
 
 // copy fonts to dist webfonts folder
@@ -123,25 +118,19 @@ function reloadBrowser(){
 // watch files changes and run the tasks
 function watchFiles(){
     gulp.watch(paths.templates.srcAll, templates);
-    gulp.watch(paths.templates.srcAll).on('change', browserSync.reload);
+    gulp.watch(paths.templates.srcAll).on('change', reload);
 
     gulp.watch(paths.styles.src, styles);
-    gulp.watch(paths.styles.src).on('change', browserSync.reload);
+    gulp.watch(paths.styles.src).on('change', reload);
 
-    gulp.watch("src/scripts/*.js", customJs);
-    gulp.watch("src/scripts/layouts/*.js", customJs);
-    gulp.watch("src/scripts/*.js").on('change', browserSync.reload);
-    gulp.watch("src/scripts/layouts/*.js").on('change', browserSync.reload);
-    
-    gulp.watch("./src/scripts/vendors/*.js", scripts);
-    gulp.watch("./src/scripts/vendors/*.js").on('change', browserSync.reload);
+    gulp.watch(paths.scripts.src, scripts);
+    gulp.watch(paths.scripts.src).on('change', reload);
 } 
 
 // define tasks
 gulp.task('templates', templates);
 gulp.task('concatLibs', concatLibs);
 gulp.task('styles', styles);
-gulp.task('customJs', customJs);
 gulp.task('scripts', scripts);
 gulp.task('supportBrowsers', supportBrowsers);
 gulp.task('fonts', fonts);
@@ -151,7 +140,7 @@ gulp.task('reloadBrowser', reloadBrowser);
 
 
 // Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
-var dist = gulp.parallel(templates, concatLibs, styles, customJs, scripts, supportBrowsers, fonts, webfonts, images);
+var dist = gulp.parallel(templates, concatLibs, styles, scripts, supportBrowsers, fonts, webfonts, images);
 
 // You can still use `gulp.task` to expose tasks
 gulp.task('dist', dist);
