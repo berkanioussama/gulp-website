@@ -16,12 +16,12 @@ body{
     line-height: 28px;
     color: $text-02;
     font-size: 16px;
-    font-family: $text;
+    font-family: $text-font-01;
 }
 h1,h2,h3,h4,h5,h6{
     margin-bottom: 0;
     color: $text-01;
-    font-family: $headline;
+    font-family: $headline-font-01;
 }
 h1{
     line-height: 64px;
@@ -65,7 +65,7 @@ p{
     font-size: 16px;
 }
 .subtitle{
-    font-family: $text-medium;
+    font-family: $text-font-01;
 }
 .caption{
     line-height: 24px;
@@ -75,7 +75,7 @@ p{
     line-height: 24px;
     margin-bottom: 0;
     font-size: 14px;
-    font-family: $text-medium;
+    font-family: $text-font-01;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
