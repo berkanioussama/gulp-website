@@ -1,2 +1,115 @@
-/*==================== Start button ====================*/
-/*========== End button ==========*/
+// Button box to make shadow effect
+.button-box{
+    display: inline-block;
+    position: relative;
+    &:hover{
+        &::before{
+            box-shadow: 0 6px 16px rgba($color: $brand-01, $alpha: .3);
+        }
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 2%;
+        width: 96%;
+        height: 100%;
+        background-color: transparent;
+        border-radius: 4px;
+        box-shadow: none;
+        z-index: -1;
+        transition: all .3s ease-in-out;
+    }
+}
+.btn{
+    line-height: 20px;
+    padding: $spacing-sm $spacing-lg;
+    border-width: 2px;
+    border-radius: 4px;
+    font-family: $font-bold;
+    letter-spacing: 1px;
+    .icon{
+        margin-right: $spacing-lg;
+    }
+}
+.btn-sm{
+    line-height: 16px;
+    padding: $spacing-xs $spacing-md;
+    .icon{
+        margin-right: $spacing-md;
+    }
+    
+}
+// Button Primary
+.btn-primary{
+    background-color: $brand-01;
+    border-color: $brand-01;
+    &:hover{
+        background-color: $brand-01;
+        border-color: $brand-01;
+    }
+    &:active{
+        box-shadow: none;
+    }
+}
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+    background-color: $brand-02;
+    border-color: $brand-02;
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show>.btn-primary.dropdown-toggle:focus {
+    background-color: $brand-02;
+    border-color: $brand-02;
+    box-shadow: none;
+}
+.btn-primary.focus, .btn-primary:focus {
+    background-color: $brand-02;
+    border-color: $brand-02;
+    box-shadow: none;
+}
+.btn-primary:disabled, .btn-primary.disabled{
+    background-color: $brand-02;
+    border-color: $brand-02;
+}
+
+// Button Outline Primary
+.btn-outline-primary{
+    background-color: transparent;
+    border-color: $brand-01;
+    color: $brand-01;
+    &:hover{
+        background-color: $brand-01;
+        border-color: $brand-01;
+    }
+}
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.show>.btn-outline-primary.dropdown-toggle {
+    background-color: $brand-02;
+    border-color: $brand-02;
+}
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.show>.btn-outline-primary.dropdown-toggle:focus {
+    background-color: $brand-02;
+    border-color: $brand-02;
+    box-shadow: none;
+}
+.btn-outline-primary.focus, .btn-outline-primary:focus {
+    background-color: $brand-02;
+    border-color: $brand-02;
+    box-shadow: none;
+}
+.btn-outline-primary:disabled, .btn-outline-primary.disabled{
+    background-color: $brand-02;
+    border-color: $brand-02;
+}
+
+// Button Link
+.btn-link{
+    color: $brand-01;
+}

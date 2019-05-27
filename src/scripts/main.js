@@ -8,7 +8,7 @@
 
 // Initialize Sal
 sal({
-    threshold: .25,
+    threshold: .20,
 });
 // End of Sal
 $(document).ready(function(){
@@ -17,7 +17,7 @@ $(document).ready(function(){
     // type your global script here //
 
     // instantiate Lozad as follows:
-    const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    var observer = lozad(); // lazy loads elements with default selector as '.lozad'
     observer.observe();
     // End of Lozad
 

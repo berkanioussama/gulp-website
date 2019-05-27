@@ -1,46 +1,53 @@
 // Colors Variables
+
     // Brand
-    $brand-01: #FF3CA0;
-    $brand-02: #A6266E;
+    $brand-01   : #FF3CA0;
+    $brand-02   : #A6266E;
     // Ui
-    $ui-01: #FFFFFF;
-    $ui-02: #F4F7FB;
-    $ui-03: #e9ecef;
+    $ui-01      : #FFFFFF;
+    $ui-02      : #F4F7FB;
+    $ui-03      : #e9ecef;
+    $ui-04      : #c9c9c9;
     // Text
-    $text-01: #202530;
-    $text-02: #5A6872;
-    $text-03: #CDD1D4;
-    $inverse-01: #FFFFFF;
-    $inverse-02: rgba(255, 255, 255, .9);
+    $text-01    : #202530;
+    $text-02    : rgba($color: $text-01, $alpha: .8);
+    $text-03    : rgba($color: $text-01, $alpha: .6);
+    $inverse-01 : #FFFFFF;
+    $inverse-02 : rgba(255, 255, 255, .85);
 // End of Colors Variables
 
-// Fonts
-	$headline-font-01: 'IBMPlexSans-Bold', sans-serif;
-    $headline-font-02: 'IBMPlexSans-Medium', sans-serif;
-    $text-font-01: 'Lato-Light', sans-serif;
-    $text-font-02: 'Lato-Light', sans-serif;
+// Shadow
+    $base-shadow    : 0 4px 24px rgba($color: #000000, $alpha: .08);
+    $primary-shadow : 0 8px 24px rgba($color: $brand-01, $alpha: .1);
+// End of Shadow
+
+// fonts
+    $font-regular   : 'IBMPlexSans-Regular', sans-serif;
+    $font-italic    : 'IBMPlexSans-Italic', sans-serif;
+    $font-bold      : 'IBMPlexSans-Bold', sans-serif;
+    //$font-Medium: 'IBMPlexSans-Medium', sans-serif;
 // End of Fonts
 
-// Spacing Scale
-    $spacing-2xs: 4px;
-    $spacing-xs: 8px;
-    $spacing-sm: 12px;
-    $spacing-md: 16px;
-    $spacing-lg: 24px;
-    $spacing-xl: 32px;
-    $spacing-2xl: 40px;
-    $spacing-3xl: 48px;
-// End of Spacing Scale
+// Breakpont
+    $breakpoint-small       : 576px;
+    $breakpoint-medium      : 768px;
+    $breakpoint-large       : 992px;
+    $breakpoint-extra-large : 1200px;
+// End of Breakpont
 
 // Layout Scale
-    $layout-md: 64px;
-    $layout-lg: 96px;
-    $layout-xl: 160px;
+    $layout-md      : 64px;
+    $layout-lg      : 96px;
+    $layout-xl      : 160px;
 // End of Layout Scale
 
-// Breakpont
-    $breakpoint-small: 576px;
-    $breakpoint-medium: 768px;
-    $breakpoint-large: 992px;
-    $breakpoint-extra-large: 1200px;
-// End of Breakpont
+// Spacing Scale
+    $spacing-2xs    : 4px;
+    $spacing-xs     : 8px;
+    $spacing-sm     : 12px;
+    $spacing-md     : 16px;
+    $spacing-lg     : 24px;
+    $spacing-xl     : 32px;
+    $spacing-2xl    : 40px;
+    $spacing-3xl    : 48px;
+// End of Spacing Scale

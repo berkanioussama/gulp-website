@@ -1,8 +1,24 @@
 /*==================== Start global ====================*/
-a{
-    color: $brand-01;
+.link{
+    color: $text-02;
     &:hover{
+        color: $brand-01;
         text-decoration: none;
     }
+}
+.widget{
+    margin-bottom: $layout-md;
+    .widget-title{
+        margin-bottom: $spacing-xl;
+    }
+}
+.bg-facebook{
+    background-color: #3b5998;
+}
+.bg-twitter{
+    background-color: #00aced;
+}
+.bg-whatsapp{
+    background-color: #25D366;
 }
 /*==================== End of global ====================*/

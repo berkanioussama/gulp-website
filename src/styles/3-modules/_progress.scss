@@ -1,0 +1,16 @@
+.progress{
+    height: 8px;
+    background-color: $ui-02;
+    .progress-bar{
+        background-color: $brand-01;
+    }
+}
+.progress.outline{
+    padding: 3px;
+    height: 16px;
+    background-color: transparent;
+    border: solid 1px $brand-01;
+    .progress-bar{
+        background-color: $brand-01;
+    }
+}

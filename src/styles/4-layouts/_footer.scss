@@ -1,3 +1,39 @@
 /*==================== Start section footer ====================*/
-    
+.footer{
+    background-color: $ui-02;
+    .container{
+        padding-top: 64px;
+        padding-bottom: 24px;
+        .logo{
+            img{
+                height: 37px;
+                width: auto;
+            }
+        }
+        .text{
+            margin-top: 32px;
+            margin-bottom: 32px;
+            font-size: 14px;
+        }
+        .social{
+            margin-bottom: 32px;
+            .icon{
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                margin-right: 12px;
+                background-color: rgba($color: $brand-01, $alpha: .75);
+                border-radius: 50%;
+                font-size: 16px;
+                a{
+                    color: $inverse-01;
+                }
+            }
+        }
+        hr{
+            border-color: $ui-03;
+        }
+    }
+}
 /*==================== End section footer ====================*/

@@ -1,28 +1,22 @@
-.info{
-    margin-bottom: $layout-md;
-    @media (min-width: $breakpoint-large) {
-        margin-bottom: 0;
-    }
-}
 form, .form{
     .form-group{
         margin-bottom: $spacing-lg;
     }
     label{
         margin-bottom: $spacing-2xs;
-        font-family: $text-font-01;
+        font-family: $font-bold;
         text-transform: uppercase;
+        cursor: pointer;
     }
     .form-control{
-        height: 52px;
+        height: 48px;
         padding: $spacing-sm;
-        border: solid 1px $ui-03;
-        box-shadow: 0 2px 4px rgba($color: #000000, $alpha: .1);
+        padding-left: $spacing-md;
+        border: solid 1px $ui-04;
         transition: all .3s ease-in-out;
         &:active, &:focus{
             border-color: $brand-01;
             border-width: 2px;
-            box-shadow: 0 2px 4px rgba($color: #000000, $alpha: .1);
         }
         &.is-valid{
             border-width: 2px;
@@ -38,5 +32,52 @@ form, .form{
     }
     ::placeholder{
         color: rgba($color: $text-02, $alpha: .7);
+    }
+    .form-check-input[type="checkbox"]{
+        display: none;
+        + .form-check-label::before{
+            content: "\f0c8";
+            font-family: "Font Awesome 5 Free";
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            margin-right: $spacing-sm;
+            margin-left: -$spacing-md;
+            transition: all .3s ease-in-out;
+        }
+        &:checked + .form-check-label::before{
+            content: "\f14a";
+            font-weight: 900;
+            color: $brand-01;
+        }
+    }
+    .custom-control-input[type="radio"]{
+        display: none;
+        + .custom-control-label::before{
+            content: "\f111";
+            font-family: "Font Awesome 5 Free";
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            margin-right: $spacing-sm;
+            margin-top: -$spacing-2xs;
+            background-color: transparent;
+            border: none;
+            transition: all .3s ease-in-out;
+        }
+        + .custom-control-label::after{
+            display: none;
+        }
+        &:checked + .custom-control-label::before{
+            content: "\f058";
+            font-weight: 900;
+            color: $brand-01;
+            background-color: transparent;
+            border: none;
+        }
     }
 }

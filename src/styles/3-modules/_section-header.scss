@@ -1,5 +1,5 @@
 .section-header{
-    margin-bottom: $layout-lg;
+    margin-bottom: $layout-md;
     text-align: center;
     .title{
         margin-bottom: $spacing-2xs;
@@ -8,7 +8,6 @@
         margin-bottom: 0;
         line-height: 28px;
         font-size: 20px;
-        font-family: $text-font-01;
         @media (max-width: $breakpoint-medium) {
             line-height: 28px;
             font-size: 16px;

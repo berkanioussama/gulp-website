@@ -1,3 +1,184 @@
 /*==================== Start section navbar ====================*/
-	
-/*==================== End section navbar ====================*/
+.navbar{
+    padding: 16px;
+    transition: all .3s ease-in-out;
+    z-index: 1030;
+    .navbar-brand{
+        img{
+            height: 32px;
+        }
+    }
+    .navbar-toggler{
+        color: $inverse-01;
+        border: none;
+        transform: rotate(180deg);
+        &:focus{
+            outline: none;
+        }
+    }
+    .navbar-collapse{
+        margin-top: $spacing-md;
+        padding-top: $spacing-xs;
+        padding-bottom: $spacing-xs;
+        background-color: $ui-01;
+        border-radius: 8px;
+        .navbar-nav{
+            .nav-item{
+                padding: 8px 20px;
+                .nav-link{
+                    position: relative;
+                    line-height: 36px;
+                    padding: 0;
+                    color: $text-01;
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                    font-family: $font-regular;
+                    transition: all .5s ease-in-out;
+                    &:hover{
+                        color: $brand-01;
+                        &::before{
+                            height: 96%;
+                            width: 2px;
+                            top: 2%;
+                            left: -20px;
+                            background-color: $brand-01;    
+                        }
+                    }
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        height: 0;
+                        width: 2px;
+                        top: 50%;
+                        left: -20px;
+                        background-color: transparent;
+                        border-radius: 1px;
+                        transition: all .3s ease-in-out;
+                    }
+                }
+            }
+            .active>.nav-link, .nav-link.active, .nav-link.show, .show>.nav-link{
+                color: $brand-01;
+                &::before{
+                    height: 96%;
+                    top: 2%;
+                    background-color: $brand-01;
+                }
+            }
+            .nav-item.dropdown{
+                .dropdown-menu{
+                    margin: -2px 0 0;
+                    padding: 0;
+                    border: solid 1px $ui-03;
+                    border: none;
+                    border-radius: 4px;
+                    box-shadow: $base-shadow;
+                    font-size: 13px;
+                    .dropdown-item {
+                        padding: 4px 20px;
+                        border-bottom: solid 1px $ui-03;
+                        transition: all .3s ease-in-out;
+                        &:focus, &:hover {
+                            color: $text-01;
+                            background-color: $ui-02;
+                            border-left: solid 2px $brand-01;
+                        }
+                        &.active, &:active {
+                            color: #fff;
+                            background-color: $brand-01;
+                            border-left: solid 1px $brand-01;
+                        }
+                        &:last-child{
+                            border-radius: 0 0 4px 4px;
+                        }
+                    }
+                }
+            }
+        }
+        @media (min-width: $breakpoint-large) {
+            margin-top: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            background-color: transparent;
+            .navbar-nav{
+                .nav-item{
+                    .nav-link{
+                        line-height: 40px;
+                        padding: 0;
+                        color: $inverse-01;
+                        &:hover{
+                            color: $inverse-01;
+                            &::before{
+                                width: 98%;
+                                height: 2px;
+                                left: 1%;
+                                top: auto;
+                                bottom: 0px;
+                                background-color: $ui-01;    
+                            }
+                        }
+                        &::before{
+                            width: 0;
+                            height: 2px;
+                            left: 50%;
+                            top: auto;
+                            bottom: 0px;
+                            background-color: transparent;
+                            border-radius: 1px;
+                            transition: all .3s ease-in-out;
+                        }
+                    }
+                }
+                .active>.nav-link, .nav-link.active, .nav-link.show, .show>.nav-link{
+                    color: $inverse-01;
+                    &::before{
+                        width: 98%;
+                        height: 2px;
+                        left: 1%;
+                        top: auto;
+                        bottom: 0px;
+                        background-color: $ui-01;
+                    }
+                }
+            }
+        }
+    }
+}
+.navbar-light{
+    background-color: rgba($color: $ui-01, $alpha: .95);
+    box-shadow: $base-shadow;
+    .navbar-brand{
+        img{
+            height: 32px;
+        }
+    }
+    .navbar-toggler{
+        color: $text-01;
+        border-color: $text-01;
+    }
+    .navbar-collapse{
+        @media (min-width: $breakpoint-large) {
+            .navbar-nav{
+                .nav-item{
+                    .nav-link{
+                        color: $text-01;
+                        &:hover{
+                            color: $text-01;
+                            &::before{
+                                background-color: $brand-01;    
+                            }
+                        }
+                    }
+                }
+                .active>.nav-link, .nav-link.active, .nav-link.show, .show>.nav-link{
+                    color: $text-01;
+                    &::before{
+                        background-color: $brand-01;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+/*==================== end section navbar ====================*/

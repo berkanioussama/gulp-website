@@ -4,17 +4,27 @@
 <!DOCTYPE html>
 html(lang="en")
 
-    //- include head
+    //- Include Head
     include ../0-components/head
     
-    body#home(data-spy="scroll" data-target=".navbar" data-offset="50")
+    body#services(data-spy="scroll" data-target=".navbar" data-offset="50")
         
-        //- include navbar
-        include ../0-components/navbar
+        //- Hero Section
+        #hero.hero.text-center.lozad(data-background-image="images/hero/hero.jpg")
 
-        //- start section hero
-        
-        //- end section hero
+            //- Include Navbar
+            include ../0-components/navbar
+            //- Content
+            .overlay.d-flex.justify-content-center.align-items-center
+                .container(data-sal="slide-up" data-sal-delay="300" data-sal-easing="ease-out-bounce")
+                    h1.title A Big Strong Title
+                    //-h3.subtitle A Senio Web designer
+                    .row.justify-content-center
+                        .col-lg-7
+                            p.text I'm a UI/UX designer and frontend developer, with experience of 5 years in design and create Websites, Mobile apps.
+                    .button-box: a(href="#portfolio").btn.btn-primary See My work
+            //- End of Content
+        //- End of Hero
 
-        //- include footer
+        //- Include Footer
         include ../0-components/footer

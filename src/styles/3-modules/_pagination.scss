@@ -2,11 +2,14 @@
     border-radius: $spacing-2xs;
     .page-item{
         .page-link{
+            margin: 0 $spacing-2xs;
             padding: $spacing-sm $spacing-md;
+            background-color: $ui-01;
             color: $brand-01;
+            transition: all .3s ease-in-out;
             &:hover{
-                color: $brand-02;
-                background-color: $ui-02;
+                color: $ui-01;
+                background-color: $brand-01;
                 border-color: $ui-03;
             }
         }

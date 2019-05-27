@@ -1,0 +1,12 @@
+.list-group{
+    .list-group-item{
+        padding: $spacing-sm 0;
+        background-color: transparent;
+        &:first-child{
+            border-top: 0;
+        }
+        &:last-child{
+            border-bottom: 0;
+        }
+    }
+}

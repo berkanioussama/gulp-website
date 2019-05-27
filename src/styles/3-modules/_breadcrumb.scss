@@ -1,8 +1,29 @@
 .breadcrumb{
+    background-color: $ui-02;
     a{
         color: $brand-01;
         &:hover{
             color: $brand-02;
         }
+    }
+}
+.breadcrumb-transpatent{
+    padding-left: 0;
+    background-color: transparent;
+    .breadcrumb-item{
+        color: $inverse-01;
+        &::before{
+            color: $inverse-01;
+        }
+        a{
+            color: $inverse-01;
+            &:hover{
+                color: $brand-01;
+                text-decoration: none;
+            }
+        }
+    }
+    .breadcrumb-item.active{
+        color: $inverse-02;
     }
 }

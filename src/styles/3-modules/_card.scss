@@ -1,12 +1,23 @@
 .card{
     position: relative;
-    border: 0;
+    margin-bottom: $spacing-md;
+    border: solid 1px $ui-03;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba($color: #000000, $alpha: .1);
+    line-height: 24px;
+    font-size: 14px;
+    box-shadow: $base-shadow;
+    overflow: hidden;
     transition: all .3s ease-in-out;
-    .card-img-top{
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
+    @media (min-width: $breakpoint-small) {
+        margin-bottom: $spacing-lg;
+    }
+    @media (min-width: $breakpoint-extra-large) {
+        margin-bottom: $spacing-xl;
+    }
+    .image-box{
+        position: relative;
+        border-radius: 8px 8px 0 0;
+        overflow: hidden;
     }
     .card-body{
         padding: $spacing-lg;
@@ -25,17 +36,33 @@
             margin-top: 0;
             line-height: 24px;
             font-size: 14px;
+            margin-bottom: 0;
+        }
+        .card-text{
+            margin-top: $spacing-md;
+            margin-bottom: 0;
+            line-height: 24px;
+            font-size: 14px;
+        }
+        .card-caption{
+            line-height: 24px;
+            font-size: 14px;
+            margin-bottom: 0;
         }
         .card-link{
+            display: inline-block;
             position: relative;
+            margin-top: $spacing-md;
             color: $brand-01;
+            line-height: 24px;
+            font-size: 14px;
             transition: all .3s ease-in-out;
             &::after{
                 content: "";
                 position: absolute;
                 left: 0;
-                bottom: -2px;
-                width: 0;
+                bottom: -4px;
+                width: 100%;
                 height: 2px;
                 background-color: $brand-01;
                 transition: all .3s ease-in-out;
@@ -45,10 +72,10 @@
                     width: 100%;
                 }
             }
-        }
+        }   
     }
     &:hover, &:active{
-        box-shadow: 0 8px 24px rgba($color: $brand-01, $alpha: .1);
+        box-shadow: $primary-shadow;
         transform: translateY(-4px);
     }
 }

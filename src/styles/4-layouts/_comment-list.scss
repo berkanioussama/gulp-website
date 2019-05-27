@@ -1,0 +1,45 @@
+.comment-list{
+    .comment-wrapper{
+        padding-bottom: $spacing-lg;
+        margin-bottom: $spacing-lg;
+        border-bottom: 1px dashed $ui-03;
+    }
+    .comment-avatar{
+        float: left;
+        img{
+            height: 64px;
+            @media (min-width: $breakpoint-medium) {
+                height: 86px;
+            }
+        }
+    }
+    .comment-content{
+        margin-left: $spacing-md;
+        @media (min-width: $breakpoint-medium) {
+            margin-left: $spacing-lg;
+        }
+        .comment-header{
+            .title{
+                .link{
+                    
+                }
+                span{
+                    margin-left: $spacing-md;
+                    font-size: 14px;
+                    font-family: $font-regular;
+                }
+            }
+        }
+        .comment-body{
+            .text{
+                margin-bottom: $spacing-xs;
+            }
+        }
+    }
+    .comment-child{
+        padding-left: $spacing-3xl;
+        @media (min-width: $breakpoint-medium) {
+            padding-left: $layout-md;
+        }
+    }
+}
