@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const pug = require('gulp-pug');
 const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
@@ -11,7 +10,7 @@ const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 reload = browserSync.reload;
 
-// files place shortcut 
+// Files Place Shortcut 
 var paths = {
     templates: {
         src:  'src/templates/1-pages/*.pug', srcAll: 'src/templates/**/*.pug', 
@@ -29,7 +28,7 @@ var paths = {
       dist: 'dist/scripts/'
     },
     images: {
-        src:  'src/assets/images/**/*', 
+        src:  'src/assets/images/**/**/*', 
         dist: 'dist/images/'
     },
     fonts: {
@@ -42,14 +41,14 @@ var paths = {
     }
 };
 
-// Compile pug files to html pages
+// Compile Pug Files To Html Pages
 function templates(){
     return gulp.src(paths.templates.src)
         .pipe(pug(/*{ pretty: true }*/))
         .pipe(gulp.dest(paths.templates.dist));
 };
 
-// Compile scss files to one css main file
+// Compile Scss Files to One Css main File
 function styles(){
     return gulp.src(paths.styles.src)
     .pipe(sourcemaps.init())
@@ -64,16 +63,17 @@ function styles(){
     .pipe(gulp.dest(paths.styles.dist));
 };
 
-// concat custom layout js files to one js main file
+// Concat Custom Layout Js Files to One Js main File
 function scripts(){
     return gulp.src("./src/scripts/main.js")
     .pipe(include())
     .on('error', console.log)
+    .pipe(uglify())
     .pipe(gulp.dest(paths.scripts.dist));
 };
 
-// copy js files to dist scripts folder
-function supportBrowsers(){
+// Copy Js Files to dist scripts Folder
+function supportBrowsersAssets(){
     return gulp.src([
         './src/scripts/vendors/' + 'html5shiv.min.js',
         './src/scripts/vendors/' + 'respond.min.js',
@@ -81,33 +81,33 @@ function supportBrowsers(){
     .pipe(gulp.dest(paths.scripts.dist));
 };
 
-// copy fonts to dist fonts folder
+//Ccopy Fonts to dist fonts Folder
 function fonts(){
     return gulp.src(paths.fonts.src)
     .pipe(gulp.dest(paths.fonts.dist));
 };
 
-// copy fonts to dist webfonts folder
+// Copy Fonts to dist webfonts Folder
 function webfonts(){
     return gulp.src(paths.webfonts.src)
     .pipe(gulp.dest(paths.webfonts.dist));
 };
 
-// copy images to dist images folder
+// Copy Images to dist images folder
 function images(){
     return gulp.src(paths.images.src)
     .pipe(imagemin())
     .pipe(gulp.dest(paths.images.dist));
 };
 
-// open website in browser
+// Open website in Browser
 function reloadBrowser(){
     browserSync.init({
         server: './dist/'
     })
 }
 
-// watch files changes and run the tasks
+// Watch Files Changes and run he Tasks
 function watchFiles(){
     gulp.watch(paths.templates.srcAll, templates);
     gulp.watch(paths.templates.srcAll).on('change', reload);
@@ -117,13 +117,13 @@ function watchFiles(){
 
     gulp.watch(paths.scripts.src, scripts);
     gulp.watch(paths.scripts.src).on('change', reload);
-} 
+}
 
-// define tasks
+// Define Tasks
 gulp.task('templates', templates);
 gulp.task('styles', styles);
 gulp.task('scripts', scripts);
-gulp.task('supportBrowsers', supportBrowsers);
+gulp.task('supportBrowsers', supportBrowsersAssets);
 gulp.task('fonts', fonts);
 gulp.task('webfonts', webfonts);
 gulp.task('images', images);
@@ -131,12 +131,16 @@ gulp.task('reloadBrowser', reloadBrowser);
 
 
 // Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
-var dist = gulp.parallel(templates, styles, scripts, supportBrowsers, fonts, webfonts, images);
+var dist = gulp.parallel(templates, styles, scripts, supportBrowsersAssets, fonts, webfonts, images);
+var assets = gulp.parallel(fonts, webfonts, images, supportBrowsersAssets);
 
 // You can still use `gulp.task` to expose tasks
 gulp.task('dist', dist);
 
-// automatically reload the browser whene do any change to pug, sass, js files
+// Define task to copy assets to dist file. You can still use `gulp.task` to expose tasks
+gulp.task('assets', assets);
+
+// Automatically reload the browser whene do any change to pug, sass, js files
 gulp.task('watch', gulp.parallel(watchFiles, reloadBrowser));
 
 // Define default task that can be called by just running `gulp` from cli
