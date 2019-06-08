@@ -9,7 +9,7 @@
         }
     }
     .navbar-toggler{
-        color: $inverse-01;
+        color: $text-inverse-01;
         border: none;
         transform: rotate(180deg);
         &:focus{
@@ -105,9 +105,9 @@
                     .nav-link{
                         line-height: 40px;
                         padding: 0;
-                        color: $inverse-01;
+                        color: $text-inverse-01;
                         &:hover{
-                            color: $inverse-01;
+                            color: $text-inverse-01;
                             &::before{
                                 width: 98%;
                                 height: 2px;
@@ -130,7 +130,7 @@
                     }
                 }
                 .active>.nav-link, .nav-link.active, .nav-link.show, .show>.nav-link{
-                    color: $inverse-01;
+                    color: $text-inverse-01;
                     &::before{
                         width: 98%;
                         height: 2px;

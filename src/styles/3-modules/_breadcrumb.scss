@@ -11,12 +11,12 @@
     padding-left: 0;
     background-color: transparent;
     .breadcrumb-item{
-        color: $inverse-01;
+        color: $text-inverse-01;
         &::before{
-            color: $inverse-01;
+            color: $text-inverse-01;
         }
         a{
-            color: $inverse-01;
+            color: $text-inverse-01;
             &:hover{
                 color: $brand-01;
                 text-decoration: none;
@@ -24,6 +24,6 @@
         }
     }
     .breadcrumb-item.active{
-        color: $inverse-02;
+        color: $text-inverse-02;
     }
 }

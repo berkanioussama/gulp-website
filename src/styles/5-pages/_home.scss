@@ -20,14 +20,14 @@
                 padding-bottom: $layout-lg;
                 .overtitle{
                     margin-bottom: $spacing-md;
-                    color: $inverse-02;
+                    color: $text-inverse-02;
                     text-transform: uppercase;
                     letter-spacing: 4px;
                 }
                 .title{
                     line-height: 48px;
                     font-size: 32px;
-                    color: $inverse-01;
+                    color: $text-inverse-01;
                     @media (min-width: $breakpoint-small) {
                         line-height: 56px;
                         font-size: 40px;
@@ -41,7 +41,7 @@
                     margin-top: $spacing-xl;
                     margin-bottom: $spacing-2xl;
                     line-height: 32px;
-                    color: $inverse-02;
+                    color: $text-inverse-02;
                     font-size: 18px;
                 }
             }
