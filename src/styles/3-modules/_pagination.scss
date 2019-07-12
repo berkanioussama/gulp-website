@@ -1,9 +1,9 @@
 .pagination {
-    border-radius: $spacing-2xs;
+    border-radius: $spacing-02;
     .page-item{
         .page-link{
-            margin: 0 $spacing-2xs;
-            padding: $spacing-sm $spacing-md;
+            margin: 0 $spacing-02;
+            padding: $spacing-04 $spacing-05;
             background-color: $ui-01;
             color: $brand-01;
             transition: all .3s ease-in-out;
@@ -14,12 +14,12 @@
             }
         }
         &:first-child .page-link{
-            border-top-left-radius: $spacing-2xs;
-            border-bottom-left-radius: $spacing-2xs;
+            border-top-left-radius: $spacing-02;
+            border-bottom-left-radius: $spacing-02;
         }
         &:last-child .page-link{
-            border-top-right-radius: $spacing-2xs;
-            border-bottom-right-radius: $spacing-2xs;
+            border-top-right-radius: $spacing-02;
+            border-bottom-right-radius: $spacing-02;
         }
     }
 }

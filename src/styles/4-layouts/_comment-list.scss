@@ -1,7 +1,7 @@
 .comment-list{
     .comment-wrapper{
-        padding-bottom: $spacing-lg;
-        margin-bottom: $spacing-lg;
+        padding-bottom: $spacing-06;
+        margin-bottom: $spacing-06;
         border-bottom: 1px dashed $ui-03;
     }
     .comment-avatar{
@@ -14,9 +14,9 @@
         }
     }
     .comment-content{
-        margin-left: $spacing-md;
+        margin-left: $spacing-05;
         @media (min-width: $breakpoint-medium) {
-            margin-left: $spacing-lg;
+            margin-left: $spacing-06;
         }
         .comment-header{
             .title{
@@ -24,7 +24,7 @@
                     
                 }
                 span{
-                    margin-left: $spacing-md;
+                    margin-left: $spacing-05;
                     font-size: 14px;
                     font-family: $font-regular;
                 }
@@ -32,14 +32,14 @@
         }
         .comment-body{
             .text{
-                margin-bottom: $spacing-xs;
+                margin-bottom: $spacing-03;
             }
         }
     }
     .comment-child{
-        padding-left: $spacing-3xl;
+        padding-left: $spacing-09;
         @media (min-width: $breakpoint-medium) {
-            padding-left: $layout-md;
+            padding-left: $layout-01;
         }
     }
 }

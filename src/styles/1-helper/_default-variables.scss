@@ -1,8 +1,9 @@
 // Colors Variables
 
     // Brand Colors
-    $brand-01           : #FF3CA0;
-    $dark-brand-01      : darken($brand-01, 25%);
+    //$brand-02           : #E643AE;
+    $brand-01           : #6c5ce7;
+    $dark-brand-01      : darken($brand-01, 08%);
 
     // Ui Colors
     $ui-01              : #FFFFFF;
@@ -15,7 +16,7 @@
     $text-02            : rgba($color: $text-01, $alpha: .8);
     $text-03            : rgba($color: $text-01, $alpha: .6);
     $text-inverse-01    : #FFFFFF;
-    $text-inverse-02    : rgba(255, 255, 255, .85);
+    $text-inverse-02    : rgba($color: $text-inverse-01, $alpha: .85);
 
 // End of Colors Variables
 
@@ -46,21 +47,22 @@
 
 // Layout Scale
 
-    $layout-md          : 64px;
-    $layout-lg          : 96px;
-    $layout-xl          : 160px;
+    $layout-01          : 64px;
+    $layout-02          : 96px;
+    $layout-03          : 160px;
 
 // End of Layout Scale
 
 // Spacing Scale
 
-    $spacing-2xs        : 4px;
-    $spacing-xs         : 8px;
-    $spacing-sm         : 12px;
-    $spacing-md         : 16px;
-    $spacing-lg         : 24px;
-    $spacing-xl         : 32px;
-    $spacing-2xl        : 40px;
-    $spacing-3xl        : 48px;
+    $spacing-01         : 2px;
+    $spacing-02         : 4px;
+    $spacing-03         : 8px;
+    $spacing-04         : 12px;
+    $spacing-05         : 16px;
+    $spacing-06         : 24px;
+    $spacing-07         : 32px;
+    $spacing-08         : 40px;
+    $spacing-09         : 48px;
     
 // End of Spacing Scale

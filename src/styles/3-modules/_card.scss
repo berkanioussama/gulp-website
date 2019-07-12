@@ -1,18 +1,18 @@
 .card{
     position: relative;
-    margin-bottom: $spacing-md;
+    margin-bottom: $spacing-05;
     border: solid 1px $ui-03;
     border-radius: 8px;
-    line-height: 24px;
-    font-size: 14px;
+    line-height: 26px;
+    font-size: 15px;
     box-shadow: $base-shadow;
     overflow: hidden;
     transition: all .3s ease-in-out;
     @media (min-width: $breakpoint-small) {
-        margin-bottom: $spacing-lg;
+        margin-bottom: $spacing-06;
     }
     @media (min-width: $breakpoint-extra-large) {
-        margin-bottom: $spacing-xl;
+        margin-bottom: $spacing-07;
     }
     .image-box{
         position: relative;
@@ -20,7 +20,7 @@
         overflow: hidden;
     }
     .card-body{
-        padding: $spacing-lg;
+        padding: $spacing-06;
         .card-title{
             margin-bottom: 0;
             letter-spacing: 1px;
@@ -39,10 +39,10 @@
             margin-bottom: 0;
         }
         .card-text{
-            margin-top: $spacing-md;
+            margin-top: $spacing-05;
             margin-bottom: 0;
-            line-height: 24px;
-            font-size: 14px;
+            line-height: 26px;
+            font-size: 15px;
         }
         .card-caption{
             line-height: 24px;
@@ -52,10 +52,10 @@
         .card-link{
             display: inline-block;
             position: relative;
-            margin-top: $spacing-md;
+            margin-top: $spacing-05;
             color: $brand-01;
-            line-height: 24px;
-            font-size: 14px;
+            line-height: 26px;
+            font-size: 15px;
             transition: all .3s ease-in-out;
             &::after{
                 content: "";
@@ -71,6 +71,10 @@
                 &::after{
                     width: 100%;
                 }
+            }
+            i{
+                font-size: 12px;
+                margin-left: $spacing-01;
             }
         }   
     }

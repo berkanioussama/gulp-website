@@ -4,7 +4,7 @@
     .hero{
         position: relative;
         height: 100%;
-        min-height: 700px;
+        min-height: 712px;
         background: url(../images/home/hero/min/hero.jpg);
         background-size: cover;
         background-position: center top;
@@ -15,34 +15,55 @@
             height: 100%;
             background-color: rgba($color: $text-01, $alpha: .5);
             .container{
-                margin-top: $layout-md;
-                padding-top: $layout-xl;
-                padding-bottom: $layout-lg;
+                margin-top: $layout-01;
+                padding-top: $layout-03;
+                padding-bottom: $layout-01;
                 .overtitle{
-                    margin-bottom: $spacing-md;
-                    color: $text-inverse-02;
-                    text-transform: uppercase;
-                    letter-spacing: 4px;
+                    margin-bottom: $spacing-05;
+                    color: $text-inverse-01;
+                    font-size: 20px;
+                    //text-transform: uppercase;
+                    letter-spacing: 2px;
+                    @media (min-width: $breakpoint-small) {
+                        font-size: 24px;
+                    }
                 }
                 .title{
+                    margin-bottom: 48px;
                     line-height: 48px;
-                    font-size: 32px;
+                    font-size: 40px;
                     color: $text-inverse-01;
                     @media (min-width: $breakpoint-small) {
                         line-height: 56px;
                         font-size: 40px;
                     }
                     @media (min-width: $breakpoint-medium) {
-                        line-height: 76px;
+                        line-height: 72px;
                         font-size: 56px;
+                    }
+                    @media (min-width: $breakpoint-large) {
+                        line-height: 80px;
+                        font-size: 64px;
+                    }
+                    @media (min-width: $breakpoint-extra-large) {
+                        line-height: 90px;
+                        font-size: 90px;
+                        margin-bottom: 48px;
                     }
                 }
                 .text{
-                    margin-top: $spacing-xl;
-                    margin-bottom: $spacing-2xl;
+                    margin-top: $spacing-07;
+                    margin-bottom: $spacing-08;
                     line-height: 32px;
                     color: $text-inverse-02;
                     font-size: 18px;
+                }
+            }
+            .button-box{
+                margin-top: 8px;
+                margin-right: $spacing-05;
+                &:last-child{
+                    margin-right: 0;
                 }
             }
         }

@@ -24,20 +24,20 @@
 }
 .btn{
     line-height: 20px;
-    padding: $spacing-sm $spacing-lg;
+    padding: $spacing-04 $spacing-06;
     border-width: 2px;
     border-radius: 4px;
     font-family: $font-bold;
     letter-spacing: 1px;
     .icon{
-        margin-right: $spacing-lg;
+        margin-right: $spacing-06;
     }
 }
 .btn-sm{
     line-height: 16px;
-    padding: $spacing-xs $spacing-md;
+    padding: $spacing-03 $spacing-05;
     .icon{
-        margin-right: $spacing-md;
+        margin-right: $spacing-05;
     }
     
 }
@@ -56,24 +56,24 @@
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
 .show>.btn-primary.dropdown-toggle {
-    background-color: $brand-02;
-    border-color: $brand-02;
+    background-color: $dark-brand-01;
+    border-color: $dark-brand-01;
 }
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .show>.btn-primary.dropdown-toggle:focus {
-    background-color: $brand-02;
-    border-color: $brand-02;
+    background-color: $dark-brand-01;
+    border-color: $dark-brand-01;
     box-shadow: none;
 }
 .btn-primary.focus, .btn-primary:focus {
-    background-color: $brand-02;
-    border-color: $brand-02;
+    background-color: $dark-brand-01;
+    border-color: $dark-brand-01;
     box-shadow: none;
 }
 .btn-primary:disabled, .btn-primary.disabled{
-    background-color: $brand-02;
-    border-color: $brand-02;
+    background-color: $dark-brand-01;
+    border-color: $dark-brand-01;
 }
 
 // Button Outline Primary
@@ -89,27 +89,32 @@
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .show>.btn-outline-primary.dropdown-toggle {
-    background-color: $brand-02;
-    border-color: $brand-02;
+    background-color: $dark-brand-01;
+    border-color: $dark-brand-01;
 }
 .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus,
 .show>.btn-outline-primary.dropdown-toggle:focus {
-    background-color: $brand-02;
-    border-color: $brand-02;
+    background-color: $dark-brand-01;
+    border-color: $dark-brand-01;
     box-shadow: none;
 }
 .btn-outline-primary.focus, .btn-outline-primary:focus {
-    background-color: $brand-02;
-    border-color: $brand-02;
+    background-color: $dark-brand-01;
+    border-color: $dark-brand-01;
     box-shadow: none;
 }
 .btn-outline-primary:disabled, .btn-outline-primary.disabled{
-    background-color: $brand-02;
-    border-color: $brand-02;
+    background-color: $dark-brand-01;
+    border-color: $dark-brand-01;
 }
 
 // Button Link
 .btn-link{
     color: $brand-01;
+    &:hover{
+        color: $brand-01;
+        background-color: $ui-02;
+        text-decoration: none;
+    }
 }

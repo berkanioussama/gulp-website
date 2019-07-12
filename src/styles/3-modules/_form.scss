@@ -1,18 +1,17 @@
 form, .form{
     .form-group{
-        margin-bottom: $spacing-lg;
+        margin-bottom: $spacing-06;
     }
     label{
-        margin-bottom: $spacing-2xs;
+        margin-bottom: $spacing-02;
         font-family: $font-bold;
-        text-transform: uppercase;
         cursor: pointer;
     }
     .form-control{
         height: 48px;
-        padding: $spacing-sm;
-        padding-left: $spacing-md;
-        border: solid 1px $ui-04;
+        padding: $spacing-04;
+        padding-left: $spacing-05;
+        border: solid 1px $ui-03;
         transition: all .3s ease-in-out;
         &:active, &:focus{
             border-color: $brand-01;
@@ -43,8 +42,8 @@ form, .form{
             font-variant: normal;
             text-rendering: auto;
             -webkit-font-smoothing: antialiased;
-            margin-right: $spacing-sm;
-            margin-left: -$spacing-md;
+            margin-right: $spacing-04;
+            margin-left: -$spacing-05;
             transition: all .3s ease-in-out;
         }
         &:checked + .form-check-label::before{
@@ -63,8 +62,8 @@ form, .form{
             font-variant: normal;
             text-rendering: auto;
             -webkit-font-smoothing: antialiased;
-            margin-right: $spacing-sm;
-            margin-top: -$spacing-2xs;
+            margin-right: $spacing-04;
+            margin-top: -$spacing-02;
             background-color: transparent;
             border: none;
             transition: all .3s ease-in-out;
